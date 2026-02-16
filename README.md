@@ -160,24 +160,3 @@ All API calls are centralized in src/services/bookService.ts:
 Errors from the API are caught and re-thrown with simple `Error` messages, which pages like Home or EditBook display as basic text (for example using the `error-text` class).
 
 ---
-
-## 6. Pages overview (for interview explanation)
-
-- Home.tsx
-  - Fetches all books via `BookService.getAllBooks()` inside `useEffect`.
-  - Renders a simple table with title, author and action buttons (Edit/Delete/View).
-
-- CreateBook.tsx
-  - Uses `BookForm` with no initial data.
-  - On submit, calls `BookService.createBook()` and navigates back to `/`.
-
-- EditBook.tsx
-  - Fetches an existing book by id.
-  - Passes it as `initialData` to `BookForm`.
-  - On submit, calls `BookService.updateBook()` and navigates back to `/`.
-
-- ViewBook.tsx
-  - Fetches a single book by id.
-  - Shows read‑only details and buttons to go back or edit.
-
-This gives you a clear, interview‑friendly story for file structure, validation, and how the frontend integrates with the .NET backend.
